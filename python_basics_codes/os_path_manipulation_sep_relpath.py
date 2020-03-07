@@ -9,3 +9,5 @@ curpath = os.path.dirname(__file__)
 #print(os.pardir)
 # moving back to parent directory and navigating other path
 print(os.path.join(os.path.abspath(os.path.join(curpath,os.pardir))),"dir2/subdir2/file2.txt")
+print(os.path.join(os.path.split(os.path.dirname(__file__))[0],"dir2/subdir2/file2.txt"))
+print(os.path.relpath(os.path.join(os.path.dirname(__file__),os.pardir)))
