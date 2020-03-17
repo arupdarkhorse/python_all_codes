@@ -9,7 +9,7 @@ x = A()
 print(x.brand)
 x.brand = 'Tata'
 print(f"{x.brand}\t {A.brand}")
-# give erro
+# give error
 #print(x.value)
 print(getattr(x, "value", 100))     # getattr for handing exception
 x.value = 3_00_000
@@ -52,13 +52,27 @@ class Robot:
     say_hi = hi
 x = Robot()
 x.name = 'Utkal'
-x.say_hi()
+x.say_hi
 Robot.say_hi(x)
 # Method is a function defined inside a class
 # x is used here as a reference to the calling instance, which is generally called self i.e.
-self = Robot()
-self.name = "Jadu"
-self.say_hi()
-self.say_hi()
-Robot.say_hi(self)
+'''
+def age_name(obj):
+    return obj.name, obj.age
+class Name:
+    first_fun = age_name
+self = Name()
+self.name = "Hari"
+self.age = 23
 
+print(self.first_fun())
+'''
+# __init__ method get executed immediately once an instance has been created
+
+class Robot:
+
+    def __init__(self):
+        print("init is executed")
+a = Robot()
+
+def set_val
