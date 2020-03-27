@@ -61,3 +61,53 @@ for i in [2,3,4]:
 mylist.traverse_list()
 mylist.insert_node_after_giv_node(3,5)
 mylist.traverse_list()
+
+# using recursion
+'''
+class Node:
+
+    def __init__(self, data=None):
+        self.data = data
+        self.prev = None
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def insertion(self, new_node):
+        def recur(cur):
+            if cur.next:
+                cur = cur.next
+                recur(cur)
+            else:
+                cur.next = Node(new_node)
+        if not self.head:
+            self.head = Node(new_node) 
+        else:
+            current = self.head
+            recur(current)
+    
+    def traversal(self):
+        def recur(cur):
+            if cur:
+                print(cur.data)
+                cur = cur.next
+                recur(cur)
+
+        current = self.head
+        recur(current)
+            
+
+
+arup = LinkedList()
+arup.insertion(1)
+arup.insertion(2)
+arup.insertion(3)
+arup.insertion(4)
+arup.insertion(5)
+arup.insertion(6)
+arup.insertion(7)
+
+arup.traversal()
+'''
