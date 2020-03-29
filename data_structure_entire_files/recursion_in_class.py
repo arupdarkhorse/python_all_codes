@@ -121,3 +121,7 @@ arup.insertion(6)
 arup.insertion(7)
 
 arup.traversal()
+
+# try using static method
+# try using decorator
+# try using loop for bulk insert
