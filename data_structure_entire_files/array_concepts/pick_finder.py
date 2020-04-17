@@ -59,3 +59,5 @@ arr = [90, 2, 20, 30, 70, 60 ]
 
 print("Index of a peak point is", peak_finder(arr)) 
 
+# two dimensional pick finder to do
+
