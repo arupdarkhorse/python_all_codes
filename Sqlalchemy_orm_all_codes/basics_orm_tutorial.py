@@ -14,7 +14,7 @@ meta.create_all(engine)
 conn = engine.connect()
 
 # insertind multiple rows to table
-ins = [{"id" : i, "name" : f"arup_{str(i)}"} for i in range(1000000)]		#Here you mention the total number of rows in the table
+ins = [{"id" : i, "name" : f"arup_{str(i)}"} for i in range(10_00_000)]		#Here you mention the total number of rows in the table
 conn.execute(arup_table.insert(), ins)
 
 
@@ -27,7 +27,7 @@ cnt_partition = 0
 
 #row_num = 10
 while True:
-    df = pd.DataFrame(complete_data.fetchmany(10000))
+    df = pd.DataFrame(complete_data.fetchmany(1_00_000))
     if len(df)==0:
         break
     else:
@@ -36,7 +36,7 @@ while True:
             df.to_csv(filename, index=False)
             cnt_partition +=1
         else:
-            if cnt_partition == 10:
+            if cnt_partition == 2:
                 cnt_csv += 1
                 filename = f"arup_{str(cnt_csv)}.csv"
                 df.to_csv(filename, index=False)
